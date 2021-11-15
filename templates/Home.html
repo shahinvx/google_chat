@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% block content %}
+{% load template_tags %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="{% static 'custom/css/my_profile.css' %}" rel="stylesheet" id="bootstrap-css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <div class="d-flex justify-content-center p-5">
+
+
+        <table>
+            <tr>
+                {% for user_m in my_user %}
+                {% if user_m.username != request.user.username %}
+                <td>
+                    <div class="container mt-5">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-md-11">
+                                <div class="card p-3 py-4">
+                                    <div class="text-center"> <img src="https://i.imgur.com/bDLhJiP.jpg" width="100"
+                                            class="rounded-circle"> </div>
+                                    <form action="" method="POST">
+                                        {% csrf_token %}
+                                        <div class="text-center mt-3">
+                                            <a class="btn bg-secondary p-1 px-4 rounded text-white"
+                                                href="{% url 'Home' %}" role="button">Profile</a></span>
+                                            <h5 class="mt-2 mb-0">{{ user_m.username }}</h5> <span>UI/UX Designer id :
+                                                {{ user_m.id }}
+                                            </span>
+                                            <div class="px-4 mt-1">
+                                                <p class="fonts">Consectetur adipiscing elit, email: {{ user_m.email }}
+                                                    sed
+                                                    do
+                                                    eiusmod
+                                                    tempor
+                                                    incididunt ut labore et
+                                                    dolore magna aliqua. </p>
+                                            </div>
+                                            <ul class="social-list">
+                                                <li><i class="fa fa-facebook"></i></li>
+                                                <li><i class="fa fa-dribbble"></i></li>
+                                                <li><i class="fa fa-instagram"></i></li>
+                                                <li><i class="fa fa-linkedin"></i></li>
+                                                <li><i class="fa fa-google"></i></li>
+                                            </ul>
+                                            <div class="buttons"> <button type="button"
+                                                    class="btn btn-outline-primary px-4" value="{{ user_m.id }}"
+                                                    id="message_btn" onclick="create_msg_group(this)">Message</button>
+                                                <button class="btn btn-primary px-4 ms-3">Contact</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                {% endif %}
+                {% if user_m.username == request.user.username %}
+                <td></td>
+                {% endif %}
+            {% if forloop.counter|modulo:2 == 0 %}
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </table>
+
+    </div>
+    <script src="{% static 'chat_ui/assets/vendors/jquery/jquery-3.5.0.min.js' %}"></script>
+    <script>
+
+        function create_msg_group(event) {
+            console.log(event.value);
+
+            $.ajax({
+                type: 'POST',
+                url: "{% url 'Home' %}",
+                data: { Do: 'add_group', csrfmiddlewaretoken: '{{ csrf_token }}', user_id: event.value },
+                dataType: "json",
+                async: true,
+                success: function (data) {
+                    console.log('Create user ', data['room_name'])
+                    window.location.href = "/chat/".concat(data['room_name']);
+                },
+                error: function (data) {
+                    console.log(data)
+                }
+            })
+        }
+
+
+    </script>
+</body>
+
+{% endblock %}
+
+<!-- <div class="d-flex justify-content-center">
+        <table>
+            <tr>
+                {% for user_m in my_user %}
+                <td>
+                    <div class="container mt-5">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-md-9">
+                                <div class="card p-3 py-4">
+                                    <div class="text-center"> <img src="https://i.imgur.com/bDLhJiP.jpg" width="100"
+                                            class="rounded-circle"> </div>
+                                    <div class="text-center mt-3">
+                                       
+                                            <a class="btn bg-secondary p-1 px-4 rounded text-white" href="{% url 'Home' %}"
+                                            role="button">Profile</a></span>
+                                        <h5 class="mt-2 mb-0">{{ user_m.username }}</h5> <span>UI/UX Designer id :
+                                            {{ user_m.id }}
+                                        </span>
+                                        <div class="px-4 mt-1">
+                                            <p class="fonts">Consectetur adipiscing elit, email: {{ user_m.email }} sed
+                                                do
+                                                eiusmod
+                                                tempor
+                                                incididunt ut labore et
+                                                dolore magna aliqua. </p>
+                                        </div>
+                                        <ul class="social-list">
+                                            <li><i class="fa fa-facebook"></i></li>
+                                            <li><i class="fa fa-dribbble"></i></li>
+                                            <li><i class="fa fa-instagram"></i></li>
+                                            <li><i class="fa fa-linkedin"></i></li>
+                                            <li><i class="fa fa-google"></i></li>
+                                        </ul>
+                                        <div class="buttons"> <button
+                                                class="btn btn-outline-primary px-4">Message</button>
+                                            <button class="btn btn-primary px-4 ms-3">Contact</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                {% if forloop.counter|modulo:2 == 0 %}
+            </tr>
+            {% endif %}
+            {% endfor %}
+        </table>
+    </div> -->
