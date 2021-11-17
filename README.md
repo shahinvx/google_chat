@@ -34,8 +34,8 @@ You Both can Chat by just Log-In with your Google Account.
   - Django Templates with ajax and javascript, Django all-auth, Django Channels
 
 - Resources
-  -  `Django all-auth`  [Click Here](https://django-allauth.readthedocs.io/en/latest/ "all-auth") `or go django-allauth.readthedocs.io`
-  -  `Django Channels`  [Click Here](https://channels.readthedocs.io/en/latest/index.html "channels") `or go channels.readthedocs.io`
+  -  `Django all-auth`  [Click Here](https://django-allauth.readthedocs.io/en/latest/ "all-auth") or go `django-allauth.readthedocs.io`
+  -  `Django Channels`  [Click Here](https://channels.readthedocs.io/en/latest/index.html "channels") or go `channels.readthedocs.io`
 
 ## Deployment Issues and Solve
 - You can visit login with your Google account but The chat messages are not delivered to other person, because i use `InMemoryChannelLayer` for this App
