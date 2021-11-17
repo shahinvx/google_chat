@@ -23,6 +23,7 @@ You Both can Chat by just Log-In with your Google Account.
 - Chat
   - Implement chat using `AsyncWebsocketConsumer` and JS `WebSocket`
   - `CHANNEL_LAYERS` BACKEND: `channels.layers.InMemoryChannelLayer`
+  - `ASGI_APPLICATION` is `routing.application`
   
 - Authentication
   - Google Authentication by Django all-auth
@@ -35,6 +36,10 @@ You Both can Chat by just Log-In with your Google Account.
 - Resources
   -  `Django all-auth`  [Click Here](https://django-allauth.readthedocs.io/en/latest/ "all-auth") `or go django-allauth.readthedocs.io`
   -  `Django Channels`  [Click Here](https://channels.readthedocs.io/en/latest/index.html "channels") `or go channels.readthedocs.io`
+
+## Deployment Issues and Solve
+- You can visit login with your Google account but The chat messages are not delivered to other person, because i use `InMemoryChannelLayer` for this App
+- You can solve this issue by using `Daphne and RedisChannelLayer` (I will use those for my next `asgi` App)
 
 ## Swegger Documentation preview
 
