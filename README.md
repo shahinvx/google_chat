@@ -7,7 +7,6 @@
 - `python manage.py runserver`
 - `open http://127.0.0.1:8000/ in your browser` or [Click Here](https://google-log-chat.herokuapp.com/ "Heroku APP Demo")
 - `Admin/Login user : shahinvx | pass : shahin `
-- `User Delete Secret Key : shahin | don't think it will always same as password`
 
 ## All API in Swagger Documentation
 
@@ -43,8 +42,8 @@ You Both can Chat by just Log-In with your Google Account.
 
 ## Gif of this Google Chat
 <img src="/Screen_Doc/g_chat_app.gif" width="995" height="460"> 
-## All View inside APP
 
+## All View inside APP
 <img src="/Screen_Doc/1.png" width="412" height="235"> <img src="/Screen_Doc/1.png" width="412" height="235">
 <img src="/Screen_Doc/2.jpg" width="412" height="235"> <img src="/Screen_Doc/3.jpg" width="412" height="235">
 <img src="/Screen_Doc/4.png" width="412" height="235"> <img src="/Screen_Doc/5.png" width="412" height="235">
