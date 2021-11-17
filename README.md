@@ -39,14 +39,17 @@ You Both can Chat by just Log-In with your Google Account.
 
 ## Swegger Documentation preview
 
-![Swegger Documentation](/Screen_Doc/all_api.png)
+![Swegger Documentation](/Screen_Doc/swagger.png)
 
 ## All View inside APP
 
-<img src="/Screen_Doc/login.png" width="412" height="235"> <img src="/Screen_Doc/register.png" width="412" height="235">
-<img src="/Screen_Doc/home.PNG" width="412" height="235"> <img src="/Screen_Doc/group.png" width="412" height="235">
-<img src="/Screen_Doc/perm_off.png" width="412" height="235"> <img src="/Screen_Doc/perm_on.png" width="412" height="235">
-<img src="/Screen_Doc/user_control.png" width="995" height="460"> 
+<img src="/Screen_Doc/1.png" width="412" height="235"> <img src="/Screen_Doc/1.png" width="412" height="235">
+<img src="/Screen_Doc/2.jpg" width="412" height="235"> <img src="/Screen_Doc/3.jpg" width="412" height="235">
+<img src="/Screen_Doc/4.png" width="412" height="235"> <img src="/Screen_Doc/5.png" width="412" height="235">
+<img src="/Screen_Doc/6.png" width="412" height="235"> <img src="/Screen_Doc/7.png" width="412" height="235">
+<img src="/Screen_Doc/8.png" width="412" height="235"> <img src="/Screen_Doc/9.png" width="412" height="235">
+<img src="/Screen_Doc/10.png" width="412" height="235"> <img src="/Screen_Doc/11.png" width="412" height="235">
+<img src="/Screen_Doc/12.png" width="995" height="460"> 
 <img src="/Screen_Doc/update_info.png" width="412" height="235"> <img src="/Screen_Doc/del_confirm.png" width="412" height="235">
 
 #
